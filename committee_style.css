@@ -1,0 +1,269 @@
+body {
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+    background-image: url('/static/login_3_0.png'); /* ใช้ภาพพื้นหลังเดิม */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* ระยะห่างระหว่าง sections */
+}
+
+/* Header Section (เหมือนเดิม) */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.main-logo {
+    width: 200px; /* ปรับขนาดโลโก้ */
+    height: auto;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #F0F8FF;
+    padding: 8px 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    color: #333;
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    background-color: #FF69B4;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px #FF69B4;
+}
+
+.user-name {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.user-score {
+    font-size: 1em;
+    color: #4A90E2;
+    font-weight: 600;
+}
+
+/* Navigation Bar (เหมือนเดิม) */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #E6F7FF;
+    border-radius: 15px;
+    padding: 10px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: #4A90E2;
+    color: white;
+}
+
+/* Common Section Title Bar (เหมือนเดิม) */
+.section-title-bar {
+    background-color: #DAEEF9;
+    color: #333;
+    font-size: 1.4em;
+    font-weight: 700;
+    padding: 12px 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* Committee Section - Presiding */
+.presiding-committee .committee-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์ */
+    gap: 20px;
+}
+
+.committee-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* ซ่อนส่วนเกิน */
+}
+
+.committee-card .card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    color: white;
+}
+
+.committee-card.yellow .card-header { background-color: #FFD600; color: #333; } /* เหลือง */
+.committee-card.orange .card-header { background-color: #FF8C00; } /* ส้ม */
+.committee-card.red .card-header { background-color: #FF4D4D; } /* แดง */
+.committee-card.green .card-header { background-color: #4CAF50; } /* เขียว */
+.committee-card.pink .card-header { background-color: #FF69B4; } /* ชมพู */
+.committee-card.blue .card-header { background-color: #4A90E2; } /* น้ำเงิน */
+.committee-card.light-blue .card-header { background-color: #5DADE2; } /* ฟ้า */
+.committee-card.purple .card-header { background-color: #9B59B6; } /* ม่วง */
+
+
+.committee-card .profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid white; /* กรอบขาว */
+    object-fit: cover;
+    background-color: #eee; /* สีพื้นหลังในกรณีรูปไม่โหลด */
+}
+
+.committee-card .name-title {
+    flex-grow: 1;
+}
+
+.committee-card .committee-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.committee-card .committee-name {
+    font-size: 0.9em;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.committee-card .committee-details {
+    padding: 15px 20px;
+    background-color: #E6F7FF; /* สีฟ้าอ่อนพื้นหลังของรายละเอียด */
+    color: #555;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.committee-card .position {
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+/* Central Committee Section */
+.central-committee .committee-list-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์ */
+    gap: 15px 20px; /* ระยะห่าง row-gap column-gap */
+    background-color: #E6F7FF; /* พื้นหลังรวมของส่วนคณะกรรมการกลาง */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05); /* เงาด้านใน */
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.profile-img-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #eee;
+    border: 2px solid white; /* กรอบขาว */
+    box-shadow: 0 0 0 2px #4A90E2; /* กรอบฟ้า */
+}
+
+.list-details {
+    flex-grow: 1;
+}
+
+.list-name {
+    font-size: 1em;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.list-position {
+    font-size: 0.85em;
+    color: #555;
+    margin: 0;
+}
+
+
+/* Responsive Adjustments (เหมือนเดิม) */
+@media (max-width: 768px) {
+    .header-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .user-info {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .presiding-committee .committee-grid,
+    .central-committee .committee-list-grid {
+        grid-template-columns: 1fr; /* 1 คอลัมน์สำหรับหน้าจอขนาดกลาง */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .nav-item {
+        width: 80%;
+        text-align: center;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .committee-card .card-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .committee-card .profile-img {
+        margin-bottom: 10px;
+    }
+}

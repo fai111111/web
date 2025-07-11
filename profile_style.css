@@ -1,0 +1,327 @@
+body {
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+    background-image: url('/static/login_3_0.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Header Section (similar to other pages) */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.main-logo {
+    width: 200px;
+    height: auto;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #F0F8FF;
+    padding: 8px 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    color: #333;
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    background-color: #FF69B4;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px #FF69B4;
+}
+
+.user-name {
+    font-size: 1.1em;
+    color: #333;
+    text-decoration: none; /* Remove underline for link */
+    font-weight: 600;
+}
+
+.user-name:hover {
+    color: #4A90E2; /* Change color on hover */
+}
+
+.user-score {
+    font-size: 1em;
+    color: #4A90E2;
+    font-weight: 600;
+}
+
+/* Navigation Bar (similar to other pages) */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #E6F7FF;
+    border-radius: 15px;
+    padding: 10px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: #4A90E2;
+    color: white;
+}
+
+/* Common Section Title Bar */
+.section-title-bar {
+    background-color: #DAEEF9;
+    color: #333;
+    font-size: 1.4em;
+    font-weight: 700;
+    padding: 12px 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* User Information Section Specific Styles */
+.user-info-section {
+    margin-bottom: 30px;
+}
+
+.user-details-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align top */
+    background-color: #E6F7FF; /* Light blue background for this section */
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.profile-summary {
+    display: flex;
+    align-items: flex-start; /* Align top */
+    gap: 20px;
+    flex-grow: 1; /* Allows it to take available space */
+}
+
+.profile-picture-large {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #eee;
+    border: 3px solid #4A90E2; /* Blue border */
+    box-shadow: 0 0 0 3px #fff; /* White outer border */
+}
+
+.profile-text p {
+    margin: 5px 0;
+    font-size: 1.1em;
+    color: #333;
+    font-weight: 500;
+}
+
+.change-password-button {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.change-password-button:hover {
+    background-color: #357ABD;
+}
+
+.total-score-box {
+    background-color: #F8BBD0; /* Pink background */
+    border-radius: 15px;
+    padding: 15px 25px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    min-width: 150px; /* Ensure a minimum width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.total-score-label {
+    margin: 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.total-score-value {
+    margin: 5px 0 0;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #F06292; /* Darker pink */
+    line-height: 1;
+}
+
+/* Activity History Section Specific Styles */
+.activity-history-section {
+    margin-bottom: 30px;
+}
+
+.activity-history-list {
+    background-color: #E6F7FF; /* Light blue background for the list */
+    border-radius: 15px;
+    padding: 15px 25px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px dashed #BFEFFF; /* Dashed separator */
+}
+
+.history-item:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+.activity-info {
+    flex-grow: 1;
+    color: #333;
+}
+
+.activity-info p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.activity-info .activity-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #4A90E2; /* Blue title */
+    margin-bottom: 5px;
+}
+
+.activity-info .activity-description {
+    font-size: 0.95em;
+}
+
+.activity-info .activity-points {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.proof-section {
+    text-align: right;
+    min-width: 100px; /* Ensure consistent width */
+}
+
+.proof-text {
+    display: block;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #FFD600; /* Yellow color */
+    margin-bottom: 3px;
+}
+
+.proof-status {
+    display: block;
+    font-size: 0.8em;
+    color: #666;
+}
+
+/* Responsive Adjustments (similar to other pages) */
+@media (max-width: 768px) {
+    .header-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .user-info {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .user-details-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .profile-summary {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .total-score-box {
+        width: 80%; /* Adjust width for smaller screens */
+    }
+
+    .history-item {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 10px;
+    }
+
+    .proof-section {
+        width: 100%;
+        text-align: left;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .nav-item {
+        width: 80%;
+        text-align: center;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}

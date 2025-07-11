@@ -1,0 +1,221 @@
+body {
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+    background-image: url('/static/login_3_0.png'); /* ใช้ภาพพื้นหลังเดิม */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Header Section */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.main-logo {
+    width: 200px; /* ปรับขนาดโลโก้ */
+    height: auto;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #F0F8FF;
+    padding: 8px 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    color: #333;
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    background-color: #FF69B4;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px #FF69B4;
+}
+
+.user-name {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.user-score {
+    font-size: 1em;
+    color: #4A90E2;
+    font-weight: 600;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #E6F7FF;
+    border-radius: 15px;
+    padding: 10px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: #4A90E2;
+    color: white;
+}
+
+/* Activity Categories Section */
+.activity-category-section {
+    margin-bottom: 30px; /* ระยะห่างระหว่างแต่ละหมวดหมู่กิจกรรม */
+}
+
+.section-title-bar {
+    background-color: #DAEEF9;
+    color: #333;
+    font-size: 1.4em;
+    font-weight: 700;
+    padding: 12px 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.activity-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.activity-cards {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px; /* เพื่อให้มีพื้นที่สำหรับเงา */
+    /* ซ่อน scrollbar แต่ยังคง scroll ได้ */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.activity-cards::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+
+.activity-card {
+    flex-shrink: 0;
+    width: 250px;
+    background-color: #FDFDFD;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    scroll-snap-align: start;
+}
+
+.activity-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: #ddd; /* สีเทาสำหรับ placeholder */
+}
+
+.activity-description {
+    font-size: 1em;
+    color: #555;
+    font-weight: 500;
+}
+
+.carousel-arrow {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-arrow:hover {
+    background-color: #357ABD;
+    transform: scale(1.1);
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .user-info {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .activity-cards {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .nav-item {
+        width: 80%;
+        text-align: center;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}
+

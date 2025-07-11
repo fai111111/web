@@ -1,0 +1,288 @@
+body {
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+    background-image: url('/static/login_3_0.png'); /* ใช้ภาพพื้นหลังเดิม */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* ทำให้พื้นหลังอยู่นิ่งๆ */
+    display: flex;
+    justify-content: center;
+    padding: 20px 0; /* เพิ่ม padding ด้านบนล่างเพื่อให้มีพื้นที่ */
+    min-height: 100vh; /* เพื่อให้แน่ใจว่าครอบคลุมทั้งหน้าจอ */
+}
+
+.container {
+    width: 90%; /* กว้าง 90% ของ viewport */
+    max-width: 1200px; /* จำกัดความกว้างสูงสุด */
+    background-color: rgba(255, 255, 255, 0.9); /* แผงขาวกึ่งโปร่งใส */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* ระยะห่างระหว่าง sections */
+}
+
+/* Header Section */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee; /* เส้นแบ่งเบาๆ */
+}
+
+.main-logo {
+    width: 200px; /* ปรับขนาดโลโก้ */
+    height: auto;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #F0F8FF; /* สีฟ้าอ่อน */
+    padding: 8px 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    color: #333;
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    background-color: #FF69B4; /* สีชมพูตามภาพ */
+    border-radius: 50%;
+    border: 2px solid white; /* ขอบขาว */
+    box-shadow: 0 0 0 2px #FF69B4; /* กรอบชมพู */
+}
+
+.user-name {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.user-score {
+    font-size: 1em;
+    color: #4A90E2; /* สีฟ้า */
+    font-weight: 600;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #E6F7FF; /* สีฟ้าอ่อนกว่า */
+    border-radius: 15px;
+    padding: 10px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: #4A90E2; /* สีฟ้าเมื่อ hover/active */
+    color: white;
+}
+
+/* Points Display Section */
+.points-display {
+    padding: 20px;
+    background-color: #FDFDFD; /* พื้นหลังส่วนคะแนน */
+    border-radius: 15px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05); /* เงาด้านใน */
+}
+
+.points-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์ */
+    gap: 15px; /* ระยะห่างระหว่าง items */
+}
+
+.point-item {
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 1em;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific point item colors */
+.point-item.pink { background-color: #FF69B4; }
+.point-item.red { background-color: #E24A4A; }
+.point-item.blue { background-color: #4A90E2; }
+.point-item.purple { background-color: #9B59B6; }
+.point-item.yellow { background-color: #F1C40F; color: #333;} /* Yellow text needs darker color */
+.point-item.green { background-color: #2ECC71; }
+.point-item.orange { background-color: #E67E22; }
+.point-item.light-blue { background-color: #5DADE2; } /* เลือกสีฟ้าอ่อนที่ใกล้เคียง */
+
+
+.checkbox-section {
+    background-color: #E8F8FF; /* สีขาวอมฟ้าอ่อน */
+    color: #333; /* ตัวหนังสือสีเข้ม */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* จัดชิดซ้าย */
+    padding: 15px 20px; /* เพิ่ม padding ซ้ายขวา */
+    text-align: left;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* ทำให้ checkbox ใหญ่ขึ้น */
+    accent-color: #4A90E2; /* เปลี่ยนสี checkbox */
+}
+
+/* Common Section Title Bar */
+.section-title-bar {
+    background-color: #DAEEF9; /* สีฟ้าอ่อน */
+    color: #333;
+    font-size: 1.4em;
+    font-weight: 700;
+    padding: 12px 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 20px; /* ระยะห่างจากส่วนบน */
+    margin-bottom: 20px; /* ระยะห่างจากส่วนล่าง */
+}
+
+/* Activity Carousel and Photo Carousel */
+.activity-carousel, .photo-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* ระยะห่างระหว่างปุ่มกับ card */
+}
+
+.activity-cards, .photo-cards {
+    display: flex;
+    gap: 20px; /* ระยะห่างระหว่าง cards */
+    overflow-x: auto; /* เปิดให้เลื่อนแนวนอนถ้า card เยอะเกิน */
+    scroll-snap-type: x mandatory; /* ให้ snap เมื่อเลื่อน */
+    -webkit-overflow-scrolling: touch; /* สำหรับ iOS safari */
+    padding: 10px; /* เพื่อให้มีพื้นที่สำหรับเงา */
+}
+
+.activity-card, .photo-card {
+    flex-shrink: 0; /* ไม่ให้ card ย่อตัว */
+    width: 250px; /* ขนาด card */
+    background-color: #FDFDFD;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    scroll-snap-align: start; /* จัดให้อยู่ตรงจุดเริ่มต้นเมื่อ snap */
+}
+
+.activity-img, .photo-activity-img {
+    width: 100%;
+    height: 150px; /* กำหนดความสูง */
+    object-fit: cover; /* ครอบคลุมพื้นที่แต่รักษาสัดส่วน */
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: #ddd; /* สีเทาสำหรับ placeholder */
+}
+
+.activity-title {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #4A90E2;
+    margin-bottom: 5px;
+}
+
+.activity-description {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.carousel-arrow {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-arrow:hover {
+    background-color: #357ABD;
+    transform: scale(1.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .points-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์สำหรับหน้าจอขนาดกลาง */
+    }
+
+    .header-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .user-info {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .activity-cards, .photo-cards {
+        flex-wrap: nowrap; /* ยังคงเป็น carousel */
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .points-grid {
+        grid-template-columns: 1fr; /* 1 คอลัมน์สำหรับมือถือ */
+    }
+
+    .point-item.checkbox-section {
+        align-items: center; /* จัดกลางสำหรับมือถือ */
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .nav-item {
+        width: 80%;
+        text-align: center;
+    }
+
+    .login-box {
+        width: 95%;
+        padding: 20px;
+    }
+}
